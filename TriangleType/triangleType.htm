@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Triangle Type</title>
+  
+  
+  <script type="text/javascript">
+  
+	function getTypeOfTriangle(a, b, c) {
+		
+		var result;
+		
+		if(Number(a) + Number(b) <= Number(c) || Number(b) + Number(c) <= Number(a) || Number(a) + Number(c) <= Number(b))
+		{
+			result = "Error";
+		}
+		else if(a == b && b == c)
+		{
+			result = "Equilateral";
+		}
+		else if(a == b || b == c || a == c)
+		{
+			result = "Isosceles";
+		}
+		else
+		{
+			result = "Scalene";
+		}
+				
+		document.write(result);
+    }    
+	
+</script>
+</head>
+<body> 
+	<form>
+		Length of side a: <input type="text" name="sideA"> </label><br>
+		Length of side b: <input type="text" name="sideB"> </label><br>
+		Length of side c: <input type="text" name="sideC"> </label><br><br>
+		<input type="button" value="Get Type of Triangle" onclick="getTypeOfTriangle(sideA.value, sideB.value, sideC.value);" />
+	</form>
+   
+</body>
+</html>
