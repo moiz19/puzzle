@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Fibonacci</title>
+  
+  
+  <script type="text/javascript">
+  
+	function fibonacci(n) {
+		
+		var result;
+		var first = 0;
+		var second = 1;
+		
+		if(n == 0)
+		{
+			result = first;
+		}
+		else if(n == 1)
+		{
+			result = second;
+		}		
+		else if(n >= 2)
+		{		
+			var i;
+			for(i = 2; i <= n; i++)
+			{
+				var temp = first + second;
+				first = second;
+				second = temp;					
+			}
+			result = temp;
+		}		
+		else
+		{
+			result = "Invalid Input!";
+		}
+				
+		document.write(result);
+    }    
+	
+</script>
+</head>
+<body> 
+	<form>
+		Enter the index (n) of the fibonacci sequence: <input type="text" name="numberfield"> </label>
+		<input type="button" value="Calculate" onclick="fibonacci(numberfield.value);" />
+	</form>
+   
+</body>
+</html>
